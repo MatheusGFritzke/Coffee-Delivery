@@ -1,8 +1,7 @@
-import { TypesProps } from '../..'
 import { Content, Tag } from './styles'
 
 interface TypeProps {
-  types: TypesProps
+  types: string[]
 }
 
 export function Type({ types }: TypeProps) {
