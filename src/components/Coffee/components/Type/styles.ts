@@ -5,7 +5,7 @@ export const Content = styled.div`
   padding: 0.25rem 0.5rem;
   border-radius: 100px;
   gap: 0.25rem;
-  margin: auto;
+  margin: 2rem auto 1rem auto;
 `
 export const Tag = styled.div`
   display: flex;

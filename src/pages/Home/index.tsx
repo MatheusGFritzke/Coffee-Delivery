@@ -45,7 +45,7 @@ export function Home() {
                 </IconText>
                 <IconText
                   color="#8047F8"
-                  text="Embalagem mantém o café intacto"
+                  text="O café chega fresquinho até você"
                 >
                   <Coffee size={22} weight="fill" color={'#FAFAFA'} />
                 </IconText>

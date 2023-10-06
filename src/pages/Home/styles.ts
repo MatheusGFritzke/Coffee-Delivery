@@ -52,7 +52,10 @@ export const SubTitle = styled.div`
 
 export const Items = styled.div`
   display: flex;
-  width: 14.75rem;
+  /* width: 100%; */
+  &:first-child {
+    width: 14.73rem;
+  }
 `
 export const Icon = styled.div`
   display: flex;
