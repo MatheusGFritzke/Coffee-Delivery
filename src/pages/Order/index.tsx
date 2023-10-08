@@ -18,9 +18,17 @@ import {
   GridTwo,
   GridTree,
   ContentButtons,
+  Separator,
+  ConfirmOrderMain,
+  Values,
+  TotalItems,
+  Freight,
+  Total,
+  ConfirmOrderButton,
 } from './styles'
 import BasicTextFields from '../../components/TextField'
 import ButtonPaymentForm from '../../components/ButtonPaymentForm'
+import { CoffeeSelectedItem } from '../../components/CoffeeSelectedItem'
 
 export function Order() {
   return (
@@ -56,6 +64,7 @@ export function Order() {
             </p>
             <ContentButtons>
               <ButtonPaymentForm
+                selected
                 label="CARTAO DE CREDITO"
                 icon={<CreditCard size={16} color="#8047F8" />}
               />
@@ -72,7 +81,31 @@ export function Order() {
         </CompleteOrder>
         <SelectedCoffeeDiv>
           <Title>Cafes selecionados</Title>
-          <SelectedCoffee>SelectedCoffee</SelectedCoffee>
+          <SelectedCoffee>
+            <CoffeeSelectedItem />
+            <Separator />
+            <CoffeeSelectedItem />
+            <Separator />
+            <CoffeeSelectedItem />
+            <Separator />
+            <ConfirmOrderMain>
+              <Values>
+                <TotalItems>
+                  <div>Total de itens</div>
+                  <div>R$ 29,70</div>
+                </TotalItems>
+                <Freight>
+                  <div>Entrega</div>
+                  <div>R$ 3,50</div>
+                </Freight>
+                <Total>
+                  <div>Total</div>
+                  <div>R$ 33,20</div>
+                </Total>
+              </Values>
+              <ConfirmOrderButton>confirmar pedido</ConfirmOrderButton>
+            </ConfirmOrderMain>
+          </SelectedCoffee>
         </SelectedCoffeeDiv>
       </Content>
     </MainOrder>

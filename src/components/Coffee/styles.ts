@@ -72,7 +72,6 @@ export const Counter = styled.div`
   background: ${(props) => props.theme['gray-400']};
   padding: 0.5rem;
   gap: 0.5rem;
-  cursor: pointer;
 `
 
 export const IconDiv = styled.div`

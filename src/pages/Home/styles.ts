@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const MainContent = styled.div`
   display: inline-block;
   position: relative;
+  overflow-x: hidden;
 `
 export const Background = styled.div`
   display: flex;

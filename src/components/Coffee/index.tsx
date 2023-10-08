@@ -55,9 +55,19 @@ export function Coffee({
         </Price>
         <Actions>
           <Counter>
-            <Minus size={14} color={'#8047F8'} onClick={minusQuantity} />
+            <Minus
+              size={14}
+              color={'#8047F8'}
+              style={{ cursor: 'pointer' }}
+              onClick={minusQuantity}
+            />
             {quantity}
-            <Plus size={14} color={'#8047F8'} onClick={sumQuantity} />
+            <Plus
+              size={14}
+              color={'#8047F8'}
+              style={{ cursor: 'pointer' }}
+              onClick={sumQuantity}
+            />
           </Counter>
           <IconDiv>
             <ShoppingCart size={22} weight="fill" color={'#F3F2F2'} />

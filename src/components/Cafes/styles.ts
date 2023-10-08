@@ -14,5 +14,5 @@ export const Title = styled.div`
 export const CoffeeList = styled.div`
   margin-top: 3.375rem;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
 `

@@ -5,15 +5,18 @@ import { Button } from './styles'
 interface ButtonPaymentFormProps {
   label: string
   icon: ReactNode
+  selected?: boolean
 }
 
 export default function ButtonPaymentForm({
   icon,
   label,
+  selected,
 }: ButtonPaymentFormProps) {
   return (
     <Stack direction="row" spacing={2}>
       <Button
+        selected={selected}
         variant="outlined"
         startIcon={icon}
         sx={{

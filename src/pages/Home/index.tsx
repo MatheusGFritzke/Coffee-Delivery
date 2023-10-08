@@ -23,7 +23,7 @@ export function Home() {
         <Content>
           <Separator>
             <Text>
-              <Title>Econtre o café perfeito para qualquer hora do dia</Title>
+              <Title>Encontre o café perfeito para qualquer hora do dia</Title>
               <SubTitle>
                 Com o Coffee Delivery você recebe seu café onde estiver, a
                 qualquer hora
