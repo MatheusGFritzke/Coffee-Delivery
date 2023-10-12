@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const MainContent = styled.div`
   max-width: 90rem;
   padding: 0 10rem;
+  margin: auto;
 `
 export const Title = styled.div`
   color: ${(props) => props.theme['gray-700']};

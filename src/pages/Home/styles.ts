@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const MainContent = styled.div`
   display: inline-block;
   position: relative;
-  overflow-x: hidden;
+  overflow-y: auto;
 `
 export const Background = styled.div`
   display: flex;
@@ -13,6 +13,7 @@ export const Background = styled.div`
 
 export const BackgroundImage = styled.img`
   max-width: 90rem;
+  overflow-x: hidden;
   filter: blur(80px);
 `
 

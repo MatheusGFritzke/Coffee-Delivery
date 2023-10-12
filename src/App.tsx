@@ -4,17 +4,20 @@ import { defaultTheme } from './styles/themes/default'
 import { GlobalStyle } from './styles/global'
 import { Router } from './Router'
 import { BrowserRouter } from 'react-router-dom'
-import { CyclesContextProvider } from './contexts/CyclesContext'
+import { CoffeeContextProvider } from './contexts/CoffeeContext'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.min.css'
 
 export function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <BrowserRouter>
-        <CyclesContextProvider>
+        <CoffeeContextProvider>
           <Router />
-        </CyclesContextProvider>
+        </CoffeeContextProvider>
       </BrowserRouter>
       <GlobalStyle />
+      <ToastContainer />
     </ThemeProvider>
   )
 }

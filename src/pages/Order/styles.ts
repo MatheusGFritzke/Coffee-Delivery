@@ -6,6 +6,7 @@ export const MainOrder = styledComponents.div`
   display: grid;
   justify-content: center;
   align-items: center;
+  overflow-y: auto;
 `
 export const Content = styledComponents.div`
   display: grid;

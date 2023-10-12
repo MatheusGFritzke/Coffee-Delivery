@@ -32,8 +32,9 @@ export function Cafes() {
     <MainContent>
       <Title>Nossos cafés</Title>
       <CoffeeList>
-        {coffeeList.map(({ image, types, title, description, price }) => (
+        {coffeeList.map(({ image, types, title, description, price, id }) => (
           <Coffee
+            id={id}
             key={image}
             image={image}
             types={types}

@@ -30,15 +30,6 @@ export const Location = styled.div`
   }
 `
 
-export const Shop = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  border-radius: 6px;
-  background-color: ${(props) => props.theme['yellow-100']};
-  padding: 0.5rem;
-  cursor: pointer;
-`
 export const ContentHeader = styled.div`
   display: flex;
   width: 100%;

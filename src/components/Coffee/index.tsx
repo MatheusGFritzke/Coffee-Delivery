@@ -10,7 +10,8 @@ import {
   IconDiv,
   Actions,
 } from './styles'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { CoffeeContext } from '../../contexts/CoffeeContext'
 
 interface CoffeeProps {
   image: string
@@ -18,29 +19,78 @@ interface CoffeeProps {
   title: string
   description: string
   price: string
+  id: string
 }
 
 export function Coffee({
+  id,
   image,
   types,
   title,
   description,
   price,
 }: CoffeeProps) {
-  const [quantity, setQuantity] = useState(1)
+  const { setQuantity, setData } = useContext(CoffeeContext)
+  const [quantity, setQuantityItems] = useState(1)
 
   function minusQuantity() {
-    setQuantity((value) => {
+    setQuantityItems((value) => {
       if (value === 1) return value
       return value - 1
     })
   }
 
   function sumQuantity() {
-    setQuantity((value) => {
+    setQuantityItems((value) => {
       if (value === 10) return value
       return value + 1
     })
+  }
+
+  interface setDataProps {
+    id: string
+    quantity: number
+    title: string
+    price: string
+    image: string
+  }
+
+  function _setData(data: setDataProps) {
+    let setDiffecenceCoffee = true
+    const storedStateAsJSON = localStorage.getItem(
+      '@coffee-delivery:items-quantity-1.0.0',
+    )
+    let jsonParsed
+
+    if (storedStateAsJSON) {
+      jsonParsed = JSON.parse(storedStateAsJSON)
+    }
+
+    let newItems = []
+
+    if (jsonParsed) {
+      for (let i = 0; i < jsonParsed.length; i++) {
+        const element = jsonParsed[i]
+        if (element.id === data.id) {
+          setDiffecenceCoffee = false
+          jsonParsed[i].quantity = jsonParsed[i].quantity + data.quantity
+        }
+      }
+      if (setDiffecenceCoffee) newItems = [...jsonParsed, data]
+      else newItems = [...jsonParsed]
+    } else {
+      newItems = [data]
+    }
+
+    const stateJSON = JSON.stringify(newItems)
+    localStorage.setItem('@coffee-delivery:items-quantity-1.0.0', stateJSON)
+    let _quantity = 0
+    for (const item of newItems) {
+      _quantity = _quantity + item.quantity
+    }
+
+    setQuantity(_quantity)
+    setData(newItems)
   }
 
   return (
@@ -69,7 +119,9 @@ export function Coffee({
               onClick={sumQuantity}
             />
           </Counter>
-          <IconDiv>
+          <IconDiv
+            onClick={() => _setData({ id, quantity, image, price, title })}
+          >
             <ShoppingCart size={22} weight="fill" color={'#F3F2F2'} />
           </IconDiv>
         </Actions>

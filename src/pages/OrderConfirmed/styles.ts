@@ -16,7 +16,7 @@ export const Content = styledComponent.div`
 export const ImageContent = styledComponent.div`
 display: flex;
 align-items: end;
-padding-top: 6.38rem;
+padding-top: 5.82rem;
 `
 
 export const ConfirmedOrder = styledComponent.div`

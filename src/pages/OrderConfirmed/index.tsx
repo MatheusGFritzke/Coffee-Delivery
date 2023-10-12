@@ -11,8 +11,18 @@ import {
   ImageContent,
 } from './styles'
 import ilustration from '../../assets/Illustration.svg'
+import { useContext, useEffect } from 'react'
+import { CoffeeContext } from '../../contexts/CoffeeContext'
+import { useNavigate } from 'react-router-dom'
 
 export function OrderConfirmed() {
+  const navigate = useNavigate()
+  const { address, paymentForm } = useContext(CoffeeContext)
+
+  useEffect(() => {
+    if (!address) return navigate('/')
+  }, [address, navigate])
+
   return (
     <MainConfirmedOrder>
       <Content>
@@ -25,8 +35,11 @@ export function OrderConfirmed() {
                 <MapPin size={16} weight="fill" color="white" />
               </CircleIcon>
               <p>
-                Entrega em <span>Rua João Daniel Martinelli, 102</span> Farrapos
-                - Porto Alegre, RS
+                Entrega em{' '}
+                <span>
+                  {address?.Rua}, {address?.Numero}
+                </span>{' '}
+                {address?.Bairro} - {address?.Cidade}, {address?.UF}
               </p>
             </ItemContent>
             <ItemContent>
@@ -42,7 +55,7 @@ export function OrderConfirmed() {
                 <CurrencyDollar size={16} weight="fill" color="white" />
               </CircleIcon>
               <p>
-                Pagamento na entrega <br /> <span>Cartão de Crédito</span>
+                Pagamento na entrega <br /> <span>{paymentForm}</span>
               </p>
             </ItemContent>
           </InfoContent>
