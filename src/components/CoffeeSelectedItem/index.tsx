@@ -86,7 +86,6 @@ export function CoffeeSelectedItem({ coffee }: Data) {
 
   function sumQuantity() {
     _setQuantity((value) => {
-      if (value === 10) return value
       return value + 1
     })
     atualizeLocalStorage(_quantity + 1)

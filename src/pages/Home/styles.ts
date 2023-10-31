@@ -15,6 +15,7 @@ export const BackgroundImage = styled.img`
   max-width: 90rem;
   overflow-x: hidden;
   filter: blur(80px);
+  margin: auto;
 `
 
 export const Content = styled.div`
